@@ -1,0 +1,59 @@
+﻿@model AspNet_Project.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width; charset=utf-8" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+
+    <div class="panel panel-success">
+
+        <div class="panel-heading text-center"><h4>Форма заполнения</h4></div>
+
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+
+                <div asp-validation-summary="All"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name">Ваше имя:</label>
+                    <input class="form-control" asp-for="Name" placeholer="Имя" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email">Ваш e-mail:</label>
+                    <input class="form-control" asp-for="Email" placeholder="Почта" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Phone">Ваш номер:</label>
+                    <input class="form-control" asp-for="Phone"placeholder="Номер телефона" />
+                </div>
+
+                <div class="form-group">
+                    <label>Вы придете?</label>
+                    <select class="form-control" asp-for="WillAttend">
+                        <option value="">Выбрать</option>
+                        <option value="true">Да, я приду!</option>
+                        <option value="false">Нет, не смогу</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-danger" type="submit">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

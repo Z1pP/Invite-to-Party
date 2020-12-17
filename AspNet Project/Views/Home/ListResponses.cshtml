@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AspNet_Project.Models.GuestResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Responses</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel-body">
+        <h2 class="text-center">В этом списке имена тех, кто придет на вечеринку</h2><br />
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (AspNet_Project.Models.GuestResponse x in Model)
+                {
+                    <tr>
+                        <td>@x.Name</td>
+                        <td>@x.Email</td>
+                        <td>@x.Phone</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div></body>
+</html>
